@@ -1,0 +1,23 @@
+<div class="contact-form">
+  <mat-card>
+    <div class="example-container">
+      <p>Contact</p>
+      <mat-form-field>
+        <input matInput [(ngModel)]="name" placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput [(ngModel)]="emailId" placeholder="EmailId">
+        </mat-form-field>
+
+      <mat-form-field>
+        <mat-select [(ngModel)]="follower" placeholder="Follower">
+          <mat-option value="DC">DC</mat-option>
+          <mat-option value="Marvel">MARVEL</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="submit()">Submit</button>
+  </mat-card>
+</div>
+<app-list-component></app-list-component>

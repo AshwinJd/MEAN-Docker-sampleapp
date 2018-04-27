@@ -1,0 +1,32 @@
+<div *ngIf="userList" class="list">
+  <mat-card class="card">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    <div class="example-container mat-elevation-z8">
+
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="EmailId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> EmailId </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.EmailId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Follower">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Follower </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Follower}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card>
+</div>
